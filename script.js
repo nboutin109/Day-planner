@@ -1,47 +1,48 @@
-//create CSS and setup page
-$(document).ready(function () {
-var appointments=[];
-var startDate;
-var subject;
-var endDate;
-var location;
-var appointment;
-var i = 0;
+$(function () {
+update();
+classCheck();
+storageCheck();
+setInterval(update, 1000);
+setInterval(classCheck, 1000);
 
-function newAppointment () {
-    var startDate = prompt('please input the starting day and time');
-    var length = prompt('please input the time length (in minutes)');
-    var location = prompt('Where is the appointment being held?');
-    var subject = prompt('What is the appointment about?');
-    i++;
-     var appointment = {
-        startDate,
-        length,
-        location,
-        subject,
+$(".saveBtn").on("click", function() {
+    var value = $(this).siblings(".description").val();
+    var time = $(this).parent().attr("id");
+    localStorage.setItem(time, value);
+  });
+
+function storageCheck(){
+    for (i = 9; i < 18; i++){
+        var grab = '#' +i;
+        $(grab + " .description").val(localStorage.getItem(i))
     }
-    appointments.push(appointment[i])
-    function addAppointment(){}
-};
+}
 
-function addAppointment(){
-    $("#startDate").innerHTML = appointment[i]
-};
+function classCheck() {
+    for (i = 09; i < 18; i++) {
+        var grab = '#' + i;
+        var x = i;
+        var y = moment().format('HH')
+        if(x == y){
+            $(grab).removeClass('present past future');
+            $(grab).addClass('present');
+        }
+        if(x > y){
+            $(grab).removeClass('present past future');
+            $(grab).addClass('future')
+        }
+        if(x < y){
+            $(grab).removeClass('present past future');
+            $(grab).addClass('past')
+        }
+}}
 
-$(".tblock").addEventListener("click", function (){
-    var location = prompt('Please input the location of the event');
-    var subject = prompt('What is the subject of the event?');
-    text = `${subject}`+ "at/in" + `${location}`
+function update(){
+    var date = moment().format('MMMM Do YYYY');
+    var time = moment().format('h:mm:ss a');
+    $('#currentDay').html(date);
+    $('#currentTime').html(time);
+}
+
+
 });
-
-//var lookhour = moment().hour()
-
-
-var date = moment().format('ll');
-var displayDate = document.getElementById('currentDay');
-displayDate.innerHTML = `${date}`
-
-
-
-})
-//End
