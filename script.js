@@ -37,7 +37,7 @@ $(function () {
             }
         }
     }
-    
+
     function update() {
         var date = moment().format('MMMM Do YYYY');
         var time = moment().format('h:mm:ss a');
