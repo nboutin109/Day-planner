@@ -37,13 +37,11 @@ $(function () {
             }
         }
     }
-
+    
     function update() {
         var date = moment().format('MMMM Do YYYY');
         var time = moment().format('h:mm:ss a');
         $('#currentDay').html(date);
         $('#currentTime').html(time);
     }
-
-
 });
