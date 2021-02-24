@@ -7,3 +7,6 @@ Also shows current time and saves user input to local storage.
 
 ## Dependencies
 jQuery and moment.js were both used in this application.
+
+## Usage
+Download and open files in a browser or access via live server here:  https://nboutin109.github.io/Javascript-knowledge-quiz/
