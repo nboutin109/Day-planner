@@ -1,13 +1,19 @@
 # Title
-Day planner browser application
+<p>Day Planner Application</p>
+<p>A day planner application which allows the user to create appointments or events for every hour of a standard business day. Show current time and whether scheduled events are present, past, or coming up.</p>
+<a href="https://nboutin109.github.io/Day-planner/"><img src="Planner.PNG" height="250px" width="250px"/></a>
+ 
 
-## Purpose
-A day planner application which allows the user to create events on a daily basis and add a basic description of the event.  
-Also shows current time and saves user input to local storage.
+# Installation
+<p>A live deployment can be found here: <a href="https://nboutin109.github.io/Day-planner/">https://nboutin109.github.io/Day-planner/</a></p>
+<p>To use locally, simply download the files and open the index.html file with an internet browser</p>
 
-## Dependencies
-jQuery and moment.js were both used in this application.
+## Built With
+<ul>
+<li>Bootstrap - CDN link included</li>
+<li>jQuery - CDN link included</li>
+<li>Moment.js - CDN link included</li>
+</ul>
 
-## Usage
-Download and open files in a browser or access via live server here:  
-https://nboutin109.github.io/Day-planner/
+## Code Overview
+ The index.html file is rendered by the browser and styled with the included .css file and Bootstrap. The script.js page saves user input to local storage, and sets the page to be updated every second with the correct time and classes to show time on the planner.
